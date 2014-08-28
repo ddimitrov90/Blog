@@ -5,10 +5,6 @@
 angular.module('blogApp', [
   'ngRoute',
   'blogApp.home'
-  //'myApp.filters',
-  //'myApp.services',
-  //'myApp.directives',
-  //'myApp.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {templateUrl: 'partials/partial1.html', controller: 'homeController'});

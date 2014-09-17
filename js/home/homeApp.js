@@ -1,7 +1,14 @@
 (function() {
-    var homeApp = angular.module('blogApp.home', ['blogApp.services']);
-    homeApp.controller('homeController', function($scope,EverliveService) {
-    	$scope.testBind	 = "asdasdas" + EverliveService.test;
+    var homeApp = angular.module('blogApp.home', ['ngRoute','blogApp.services']);
+
+    homeApp.config(['$routeProvider', function($routeProvider) {
+      $routeProvider.when('/home', {
+        templateUrl: 'js/home/homeView.html',
+        controller: 'homeController'
+      });
+    }]);
+
+    homeApp.controller('homeController', function($scope,EverliveService) {    	
     	
     	EverliveService.getBlogPosts().then(
 	        function(result) { 

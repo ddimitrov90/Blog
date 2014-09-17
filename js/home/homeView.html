@@ -1,22 +1,9 @@
-binding:  {{ asd }}
-asdasdasdasdasd
+
 <ul class="left-col width-65">
-    <li>
-        <h2><a href="#/details">My first blog post</a></h2>
+    <li ng-repeat="bp in blogPosts">
+        <h2><a href="#/details">{{bp.Title}}</a></h2>
         <article>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque...</p>
+            <p>{{ bp.Content }}</p>
         </article>
-    </li>
-    <li>
-        <h2><a href="#/details">My second blog post</a></h2>
-        <article>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque...</p>
-        </article>
-    </li>
-    <li>
-        <h2><a href="#/details">My third blog post</a></h2>
-        <article>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque...</p>
-        </article>
-    </li>
+    </li> 
 </ul>

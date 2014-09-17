@@ -12,8 +12,8 @@
             query.order('Date').take(count);
 
             var deferred = $q.defer();
-            data.get(query).then(function(data) { 
-                    deferred.resolve(data);
+            data.get().then(function(data) { 
+                    deferred.resolve(data.result);
                 },
                 function(error) {
                     deferred.reject(error);
@@ -44,7 +44,5 @@
                 });
             return deferred.promise;
         };
-
-
     });
 })();

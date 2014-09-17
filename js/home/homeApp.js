@@ -10,9 +10,9 @@
 
     homeApp.controller('homeController', function($scope,EverliveService) {    	
     	
-    	EverliveService.getBlogPosts().then(
+    	EverliveService.getBlogPosts(5).then(
 	        function(result) { 
-	              $scope.asd = result.count;
+	              $scope.blogPosts = result;
 	        },
         	function() {
       		}

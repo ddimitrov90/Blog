@@ -2,7 +2,7 @@
     <header class="margin-top-s margin-bottom-s"><h2>Blog archive</h2></header>
     <ul>
         <li ng-repeat="(month, posts) in postsArchive">
-            <p>{{ month + ' (' + posts.length + ')'}}</p>
+            <a href='#/archive/{{month}}'>{{ month + ' (' + posts.length + ')'}}</a>
             <ul>
                 <li ng-repeat="post in posts"><a href='#/details/{{post.Url}}'>{{ post.Title}}</a></li>
             </ul>

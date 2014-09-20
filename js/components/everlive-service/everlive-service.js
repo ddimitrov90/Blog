@@ -73,7 +73,21 @@
                     deferred.reject(error);
                 });
             return deferred.promise;
-        }
+        };
+
+        this.getBlogPostsByMonth = function getBlogPostsByMonth(month){
+            var query = new Everlive.Query();
+            query.where().regex('Archive', month, 'i');
+
+            var deferred = $q.defer();
+            data.get(query).then(function(data) { 
+                    deferred.resolve(data.result);
+                },
+                function(error) {
+                    deferred.reject(error);
+                });
+            return deferred.promise;
+        };
 
         this._buildArchiveData = function _buildArchiveData(everliveData) {
             var result = {};

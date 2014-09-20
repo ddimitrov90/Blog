@@ -1,15 +1,11 @@
 <section class="margin-bottom-l">
     <header class="margin-top-s margin-bottom-s"><h2>Blog archive</h2></header>
     <ul>
-        <li><a href="#">August (52)</a>
+        <li ng-repeat="(month, posts) in postsArchive">
+            <p>{{ month + ' (' + posts.length + ')'}}</p>
             <ul>
-                <li><a href="#">Vel illum qui dolorem eum fugiat quo voluptas</a></li>
-                <li><a href="#">Reprehenderit qui in ea voluptate velit</a></li>
+                <li ng-repeat="post in posts"><a href='#/details/{{post.Url}}'>{{ post.Title}}</a></li>
             </ul>
         </li>
-        <li><a href="#">September (12)</a></li>
-        <li><a href="#">October (45)</a></li>
-        <li><a href="#">November (36)</a></li>
-        <li><a href="#">December (24)</a></li>
     </ul>
 </section>

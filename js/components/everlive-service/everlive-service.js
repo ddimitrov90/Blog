@@ -84,6 +84,7 @@
                 }
                 result[currentBlogPost.Archive].push(currentBlogPost);
             };
+            return result;
         }
     });
 })();

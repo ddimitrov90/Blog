@@ -19,6 +19,7 @@
         <script src="js/home/homeApp.js" type="text/javascript"></script>
         <script src="js/details/detailsApp.js" type="text/javascript"></script>
         <script src="js/search/searchApp.js" type="text/javascript"></script>
+        <script src="js/components/archive/archive.js" type="text/javascript"></script>
 
     </head>
     <body>
@@ -32,50 +33,16 @@
                 <a id="toggleMenu" class="toggle"><p class="toggle-button"></p></a>
                 <ul class="centered capitalize main-nav">
                     <li><a href="#">About</a></li>
-                    <li><a href="#">Art</a></li>
-                    <li><a href="#">Crafts</a></li>
-                    <li><a href="#">Adventures</a></li>
-                    <li><a href="#">Food</a></li>
-                    <li><a href="#">Inspiration</a></li>
+                    <li><a href="#/search/art">Art</a></li>
+                    <li><a href="#/search/crafts">Crafts</a></li>
+                    <li><a href="#/search/adventures">Adventures</a></li>
+                    <li><a href="#/search/food">Food</a></li>
+                    <li><a href="#/search/inspirations">Inspiration</a></li>
                 </ul>
             </nav>
             <div class="container clearfix">
-                <aside class="right-col width-35">
-                    <section class="margin-bottom-l intro">
-                        <figure>
-                            <img class="inline-block" src="images/jeni.png">
-                            <figcaption>I'm just a girl in the world!</figcaption>
-                        </figure>
-                    </section>
-                    <section class="margin-bottom-l">
-                    <header class="margin-top-s margin-bottom-s"><h2>Blog archive</h2></header>
-                    <ul>
-                        <li><a href="#">August (52)</a>
-                            <ul>
-                                <li><a href="#">Vel illum qui dolorem eum fugiat quo voluptas</a>
-                                    <li><a href="#">Reprehenderit qui in ea voluptate velit</a>
-                                    </ul>
-                                </li>
-                                <li><a href="#">September (12)</a></li>
-                                <li><a href="#">October (45)</a></li>
-                                <li><a href="#">November (36)</a></li>
-                                <li><a href="#">December (24)</a></li>
-                            </ul>
-                        </section>
-                        <section class="margin-bottom-l">
-                        <header class="margin-top-s margin-bottom-s"><h2>Tags</h2></header>
-                        <ul class="inline-block">
-                            <li><a href="#">Love</a></li>
-                            <li><a href="#">Life</a></li>
-                            <li><a href="#">Food</a></li>
-                            <li><a href="#">Look</a></li>
-                            <li><a href="#">Recipes</a></li>
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Inspiration</a></li>
-                        </ul>
-                    </section>
-                </aside>
-
+               
+                <archive-widget></archive-widget>
                 <div ng-view></div>
 
             </div>

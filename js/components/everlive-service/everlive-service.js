@@ -9,10 +9,10 @@
                 count = 5;
             }
             var query = new Everlive.Query();
-            query.order('Date').take(count);
+            query.orderDesc('Date').take(count);
 
             var deferred = $q.defer();
-            data.get().then(function(data) { 
+            data.get(query).then(function(data) { 
                     deferred.resolve(data.result);
                 },
                 function(error) {

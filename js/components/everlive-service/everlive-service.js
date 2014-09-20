@@ -26,7 +26,7 @@
             data.get({
                 Url: url
             }).then(function(data) { 
-                    deferred.resolve(data);
+                    deferred.resolve(data.result[0]);
                 },
                 function(error) {
                     deferred.reject(error);

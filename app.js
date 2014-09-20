@@ -5,7 +5,8 @@
 var app = angular.module('blogApp', [
   'ngRoute',
   'blogApp.home',
-  'blogApp.details'
+  'blogApp.details',
+  'blogApp.search'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});

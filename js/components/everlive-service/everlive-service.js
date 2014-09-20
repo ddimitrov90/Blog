@@ -44,5 +44,18 @@
                 });
             return deferred.promise;
         };
+
+        this.getBlogPostByTag = function getBlogPostByTag(tag) {
+            var deferred = $q.defer();
+            data.get({
+                Tags: tag
+            }).then(function(data) { 
+                    deferred.resolve(data.result);
+                },
+                function(error) {
+                    deferred.reject(error);
+                });
+            return deferred.promise;
+        };
     });
 })();

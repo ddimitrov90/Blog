@@ -225,6 +225,15 @@ footer
 {
 	display: none;
 }
+
+.tag1 {
+	font-size: 15px;
+}
+
+.tag2 {
+	font-size: 20px;
+}
+
 @media (max-width: 767px) 
 {
 	/*nav*/

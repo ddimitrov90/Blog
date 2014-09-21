@@ -48,10 +48,11 @@
         };
 
         this.getBlogPostByTag = function getBlogPostByTag(tag) {
+            var query = new Everlive.Query();
+            query.where({Tags: tag}).orderDesc('Date');
+
             var deferred = $q.defer();
-            blogPostData.get({
-                Tags: tag
-            }).then(function(data) { 
+            blogPostData.get(query).then(function(data) { 
                     deferred.resolve(data.result);
                 },
                 function(error) {

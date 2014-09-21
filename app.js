@@ -7,7 +7,8 @@ var app = angular.module('blogApp', [
   'blogApp.home',
   'blogApp.details',
   'blogApp.search',
-  'blogApp.archive'
+  'blogApp.archive',
+  'blogApp.tagCloud'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});

@@ -6,7 +6,6 @@
        	EverliveService.getBlogPostsArchive().then(
           function(result) { 
                 $scope.postsArchive = result;
-                console.log(result);
           },
           function() {
           }

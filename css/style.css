@@ -33,15 +33,45 @@ figure figcaption
 	margin-top:5x;
 }
 
-/*container*/
+/*layout*/
 
-.container
+.l-container
 {
-	width:1024px;
-	margin:0 auto;
-	padding:40px;
+	min-height: 100%;
 }
-
+.l-sidebar
+{
+	float:left;
+	width:20%;
+}
+.l-content
+{
+	float:right;
+	width:80%;
+}
+.l-content-expand {
+	min-height: 100%;
+	width: 100%;
+}
+.articles {
+	margin-left: 10%;
+	min-height: 100%;
+	width: 90%;
+	background-color: #fff
+}
+.article {
+	position: relative;
+	background-color: #fff;
+}
+.article-tag {
+	height: 200px;
+	position: absolute;
+	top: 50px;
+	left: -80px;
+	width: 80px;
+	background-color: #fff
+	
+}
 /*utility*/
 .padding-top-s
 {

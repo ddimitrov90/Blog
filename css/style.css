@@ -265,12 +265,6 @@ img {
 	box-shadow: none;
 	padding-top: 0;
 }
-.nav--vertical li {
-	padding: 0.5em 0 0.5em 0;
-}
-.nav--vertical li:first-child {
-	padding-top: 0;
-}
 .nav--vertical li a {
 	padding: 0
 }
@@ -385,84 +379,65 @@ img {
 
 /*Resposnive*/
 
-.toggle
+@media (max-width: 1200px)
 {
-	cursor:pointer;
-}
-.toggle-button
-{
-	background-image:url(../images/toggle-button.png);
-	width:30px;
-	height: 30px;
-	border-radius:5px;
-}
-.toggle
-{
-	display: none;
-}
+	/*Layout*/
 
-@media (max-width: 767px)
-{
-	/*nav*/
-
-	.toggle
-	{
-		display: block;
-	}
-	.nav .main-nav
-	{
-		display:none;
-	}
-	nav ul
-	{
-		padding:0;
-	}
-	.nav-show .main-nav
-	{
-		display:block;
+	.l-sidebar, .l-content {
+		float: none;
 	}
 
-	.main-nav li
-	{
-		display: block;
+	.l-sidebar {
+		padding: 10px;
+		width: 100%;
 	}
-
-
-	/*container*/
-
-	.container,
-	.nav
-	{
-		padding:10px;
-		width:100%;
+	.l-content {
+		width: 100%;
 	}
-
-	/*cols*/
-
-	.right-col,
-	.left-col
-	{
-		float:none;
-		width:100%;
-	}
-
-	/*aside*/
-
-	aside .intro
-	{
-		text-align: center;
-	}
-
-	/*header*/
-	header .container
-	{
-		padding:10px;
-	}
-
-	.header-logo
-	{
-		height:auto;
-		width:50%;
+	.section {
 		display: none;
 	}
+
+	.section-hr:before {
+		display: none;
+	} 
+
+	/*	Modules*/
+
+	.nav--vertical-primary.section {
+		display: block;
+		margin-bottom: 0;
+	}
+
+	.nav--vertical-primary li {
+		display: inline-block;
+		border: 0;
+		box-shadow: none;
+	}
+
+	.articles {
+		margin: 0;
+		padding: 20px;
+		width: 100%;
+	}
+
+	.article {
+		padding-top: 20px;
+	}
+
+	.article-rag {
+		display: none;
+	}
+
+	/*Typography*/
+
+	h1 {
+		font-size: 2.50em;
+		line-height: 1em;
+	}
+
+	h3 {
+		font-size: 1.7em;
+	}
+
 }

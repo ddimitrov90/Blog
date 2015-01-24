@@ -2,13 +2,11 @@
 @import url("font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700|Open+Sans+Condensed:300,700");
 
-/*general*/
-html,body
-{
+/*General*/
+html,body {
 	height: 100%;
 }
-body
-{
+body {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 12pt;
 	line-height: 1.75em;
@@ -19,8 +17,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 	color: #232323;
 }
-body,input,textarea,select
-{
+body,input,textarea,select {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 400;
 	color: #565656;
@@ -52,39 +49,38 @@ h4 {
 	color: #fff;
 	margin-bottom: 1.25em;
 }
-a
-{
+a {
 	text-decoration: none;
 }
 p {
 	font-size: 100%;
 	margin-bottom: 0.3em;
 }
-
 img {
 	margin-bottom: 0.3em;
 }
-/*layout*/
+
+/*Layout*/
 
 .l-container
 {
 	min-height: 100%;
-	background-color:#364050;
+	background-color: #364050;
 }
 .l-sidebar
 {
-	float:left;
-	width:15%;
-	padding:50px 20px;
+	float: right;
+	width: 15%;
+	padding: 50px 20px;
 }
 .l-sidebar a {
 	color: #d4dde0;
 }
 .l-content
 {
-	float:right;
-	width:85%;
-	background-color:#e8e8e8;
+	float: left;
+	width: 85%;
+	background-color: #e8e8e8;
 	box-shadow: 0 0 0.25em 0em rgba(0,0,0,0.25);
 	min-height: 1500px;
 }
@@ -103,11 +99,11 @@ img {
 	background-color: #fff;
 }
 .article-tag {
-	padding:10px;
-	padding-right:0;
+	padding: 10px;
+	padding-right: 0;
 	position: absolute;
 	left: -160px;
-	top:0;
+	top: 0;
 	width: 80px;
 	background-color: #fff;
 	border-top-left-radius: 5px;
@@ -118,15 +114,15 @@ img {
 .article-tag h3, h4 {
 	text-align: center;
 }
-.article-tag h4 {
-	font-weight: 300;
-	margin-bottom: 0;
-	color:#999;
-}
 .article-tag h3 {
 	font-weight: 700;
 	margin-bottom: 0;
 	color:#232323;
+}
+.article-tag h4 {
+	font-weight: 300;
+	margin-bottom: 0;
+	color:#999;
 }
 .article-tag a {
 	color: #232323;
@@ -136,55 +132,48 @@ img {
 	display:inline-block;
 	padding:0 0.5em;
 }
-/*utility*/
-.padding-top-s
-{
+
+/*Utility*/
+
+.padding-top-s {
 	padding-top:10px;
 }
-.padding-top-m
-{
+.padding-top-m {
 	padding-top:20px;
 }
-.padding-top-l
-{
+.padding-top-l {
 	padding-top:40px;
 }
-.padding-bottom-s
-{
+.padding-bottom-s {
 	padding-bottom:10px;
 }
-.padding-bottom-m
-{
+.padding-bottom-m {
 	padding-bottom:20px;
 }
-.padding-bottom-l
-{
+.padding-bottom-l {
 	padding-bottom:40px;
 }
-.margin-top-s
-{
+.margin-top-s {
 	margin-top:10px;
 }
-.margin-top-m
-{
+.margin-top-m {
 	margin-top:20px;
 }
-.margin-top-l
-{
+.margin-top-l {
 	margin-top:40px;
 }
-.margin-bottom-s
-{
+.margin-bottom-s {
 	margin-bottom:10px;
 }
-.margin-bottom-m
-{
+.margin-bottom-m {
 	margin-bottom:20px;
 }
-.margin-bottom-l
-{
+.margin-bottom-l {
 	margin-bottom:40px;
 }
+
+/*Clearfix*/
+
 .clearfix:before,
 .clearfix:after {
   content:"";
@@ -196,38 +185,36 @@ img {
 .clearfix {
   zoom:1; /* For IE 6/7 (trigger hasLayout) */
 }
-.inline-block
-{
+
+/*Display an alignment*/
+
+.inline-block {
 	display:inline-block;
 }
-.inline-block li
-{
+.inline-block li {
 	display:inline-block;
 }
-.centered
-{
+.centered {
 	text-align: center;
 }
-.left-col
-{
-	float:left;
+.left-col {
+	float: left;
 }
-.right-col
-{
-	float:right;
+.right-col {
+	float: right;
 }
-.width-35
-{
-	width:35%;
-	padding-left:10px;
+.width-35 {
+	width: 35%;
+	padding-left: 10px;
 }
-.width-65
-{
-	width:65%;
-	padding-right:10px;
+.width-65 {
+	width: 65%;
+	padding-right: 10px;
 }
 
 /*Modules*/
+
+/*Box*/
 
 .box {
 	padding: 20px 30px;
@@ -242,12 +229,12 @@ img {
 	color: #fff;
 }
 .box--info {
-	padding: 1.25em;
+	padding: 1em;
 	background-color:#272E39;
 }
-.nav li{
-	padding: 5px;
-}
+
+/*Section*/
+
 .section {
 	margin-bottom: 30px;
 }
@@ -262,6 +249,12 @@ img {
 	height: 0.5em;
 	margin: 0 0 2em 0;
 }
+
+/*Navigation*/
+
+.nav li{
+	padding: 5px;
+}
 .nav--vertical li {
 	border-top: solid 1px rgba(0,0,0,0.25);
 	box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.075);
@@ -272,7 +265,16 @@ img {
 	box-shadow: none;
 	padding-top: 0;
 }
-.nav--vertical li a{
+.nav--vertical li {
+	padding: 0.5em 0 0.5em 0;
+}
+.nav--vertical li:first-child {
+	padding-top: 0;
+}
+.nav--vertical li a {
+	padding: 0
+}
+.nav--vertical-primary li a{
 	display: block;
 	padding: 0.4em 1em 0.4em 1em;
 	text-decoration: none;
@@ -284,29 +286,22 @@ img {
 	-ms-transition: background-color .25s ease-in-out, color .25s ease-in-out;
 	transition: background-color .25s ease-in-out, color .25s ease-in-out;
 }
-.nav--vertical li a.current {
+.nav--vertical-primary li a.current {
 	background-color: #272E39;
 	background-color: rgba(0,0,0,0.15);
 	box-shadow: 0 0 0 1px rgba(255,255,255,0.05), inset 0 0 0.25em 0 rgba(0,0,0,0.25);
 	font-weight: 700;
 	color: #fff;
 }
-
-.nav--vertical li a:hover {
+.nav--vertical-primary li a:hover {
 	background-color: #272E39;
 	background-color: rgba(0,0,0,0.15);
 	box-shadow: 0 0 0 1px rgba(255,255,255,0.05), inset 0 0 0.25em 0 rgba(0,0,0,0.25);
 	color: #fff;
 }
-.nav--vertical-secondary li {
-	padding: 0.5em 0 0.5em 0;
-}
-.nav--vertical-secondary li:first-child {
-	padding-top: 0;
-}
-.nav--vertical-secondary li a{
-	padding: 0
-}
+
+/*Search*/
+
 .search form {
 	position: relative;
 }
@@ -342,6 +337,8 @@ img {
 	padding: 0.5em 0.75em;
 }
 
+/*Social share*/
+
 .social-icons {
 
 }
@@ -355,43 +352,7 @@ img {
 	opacity: 1;
 }
 
-/*header*/
-
-header .container
-{
-	padding:40px;
-}
-.header-logo
-{
-	height:400px;
-	width:auto;
-}
-/*nav*/
-nav
-{
-	width:1024px;
-	margin:0 auto;
-}
-nav ul
-{
-	padding:20px;
-}
-nav ul li {
-	display: inline-block;
-	padding:10px;
-}
-
-/*main content*/
-.main article
-{
-	text-align: justify;
-}
-
-.main figure
-{
-  padding-top:20px;
-
-}
+/*Icon*/
 
 .icon {
 	position: relative;
@@ -407,39 +368,23 @@ nav ul li {
 	text-transform: none !important;
 }
 
-/*aside*/
-
-aside li
-{
-	padding:2px;
-}
-
-aside li > ul li
-{
-	padding-left:20px;
-}
-
 /*Tags*/
 
 .post-tags li
 {
-	padding:5px;
+	padding:0.2em;
 }
 
-/*footer*/
-
-footer
-{
-	border-top:1px dashed #ccc;
-}
-/*intro*/
-
-.intro img
-{
-	border-radius:50%;
+.tag1 {
+	font-size: 15px;
 }
 
-/*resposnive*/
+.tag2 {
+	font-size: 20px;
+}
+
+/*Resposnive*/
+
 .toggle
 {
 	cursor:pointer;
@@ -454,14 +399,6 @@ footer
 .toggle
 {
 	display: none;
-}
-
-.tag1 {
-	font-size: 15px;
-}
-
-.tag2 {
-	font-size: 20px;
 }
 
 @media (max-width: 767px)

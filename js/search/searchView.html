@@ -1,9 +1,19 @@
-
-<ul class="left-col width-65">
-    <li ng-repeat="bp in blogPosts">
-        <h2><a href= "#/details/{{bp.Url}}" >{{bp.Title}}</a></h2>
-        <article>
-            <p>{{ bp.Content }}</p>
-        </article>
-    </li> 
-</ul>
+<div class="articles">
+	 <div class="article" ng-repeat="bp in blogPosts">
+		<div class="article-tag">
+			<h4>Jul</h4>
+			<h3>14</h3>
+			<!-- <ul class="social-icons social-icons--vertical">
+				<li><a href="#"><span class="icon fa-facebook"></span><span>15</span></a></li>
+				<li><a href="#"><span class="icon fa-comment"></span></span><span>4</span></a></li>
+				<li><a href="#"><span class="icon fa-heart"></span><span>10</span></a></li>
+				<li><a href="#"><span class="icon fa-twitter"></span><span>12</span></a></li>
+			</ul> -->
+		</div>
+		<h1><a href= "#/details/{{bp.Url}}" >{{bp.Title}}</a></h1>
+		<h3> A free fully responsive thing</h3>
+		<div class="content">
+			<p>{{ bp.Content }}</p>
+		</div>
+	</div> 
+</div>

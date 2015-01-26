@@ -27,6 +27,9 @@ h1 {
 	line-height: 1.25em;
 	margin-bottom: 0.5em;
 }
+h1 a{
+	color: #232323;
+}
 h2 {
 	font-weight: 700;
 	font-size: 2em;
@@ -268,6 +271,9 @@ img {
 .nav--vertical li a {
 	padding: 0
 }
+.nav--vertical ul {
+	margin-left: 10px;
+}
 .nav--vertical-primary li a{
 	display: block;
 	padding: 0.4em 1em 0.4em 1em;
@@ -377,6 +383,17 @@ img {
 	font-size: 20px;
 }
 
+.post-tags--content li {
+	margin-right: 0.4em;
+	padding: 0;
+}
+.post-tags--content a {
+	padding: 0.2em 0.5em 0.2em 0.5em;
+	background-color: #272E39;
+	box-shadow: 0 0 0 1px rgba(255,255,255,0.05), inset 0 0 0.25em 0 rgba(0,0,0,0.25);
+	border-radius: 5px;
+	color: #fff;
+}
 /*Resposnive*/
 
 @media (max-width: 1200px)

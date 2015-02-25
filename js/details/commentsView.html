@@ -1,0 +1,12 @@
+<ul>
+	<li ng-repeat="comment in data track by $index">
+		{{ comment.Comment }} by {{ comment.Author }}
+	</li>	
+</ul>
+<div>
+	Author: <br />
+	<input type="text" /> <br />
+	Comment: <br />
+	<textarea /><br />
+	<input type="button" value="add comment" ng-click="addComment()" />
+</div>

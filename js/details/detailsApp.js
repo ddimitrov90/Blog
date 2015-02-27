@@ -10,29 +10,24 @@
         }
     ]);
 
-    detailsApp.controller('detailsController', function($scope, $routeParams, EverliveService) {
+    detailsApp.controller('detailsController', function($scope, $routeParams, EverliveService) {        
         EverliveService.getBlogPostByUrl($routeParams.url).then(
             function(result) {
                 $scope.post = result;
+                $scope.post.Comments = $scope.post.Comments || [];
             },
             function() {}
         );
-    });
 
-    detailsApp.directive('commentsView', function() {
-        return {
-            restrict: 'E',
-            scope: {
-                data: '='
-            },
-            templateUrl: 'js/details/commentsView.html',
-            controller: 'detailsController',
-            link :function link(scope, element, attrs) {
-              scope.addComment = function(){
-                scope.data.push({'Author':'mmm','Comment' : 'asdsdadsa'});
+        $scope.addComment = function(){
+            var newComment = {'Author': $scope.newCommentAuthor,'Comment' : $scope.newCommentPost};
 
-              };
-            }
-        };
-    });
+            EverliveService.addNewComment($scope.post.Id, newComment).then(
+                function(result) {
+                    $scope.post.Comments.push(newComment);
+                },
+                function() {}
+            );
+        }
+    });    
 })();

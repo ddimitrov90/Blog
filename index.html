@@ -13,6 +13,7 @@
 		<script src="https://bs-static.cdn.telerik.com/1.2.5/everlive.all.min.js" type="text/javascript"></script>
 		<script src="lib/angular.js" type="text/javascript"></script>
 		<script src="lib/angular-route.js" type="text/javascript"></script>
+		<script src="lib/angular-ui-router.js" type="text/javascript"></script>
 
 		
 		<script src="js/components/everlive-service/everlive-service.js" type="text/javascript"></script>
@@ -23,11 +24,11 @@
 		<script src="js/components/tagcloud/tagCloud.js" type="text/javascript"></script>
 		<script src="app.js" type="text/javascript"></script>
 	</head>
-	<body>
+	<body >
 		<div class="l-container clearfix">
 			<div class="l-sidebar clearfix">
 				<div class="box centered box--logo section">
-					<h2><a href="#">Logo</a></h2>
+					<h2><a ui-sref="home">Logo</a></h2>
 				</div>
 				<div class="section search section-hr">
 					<form method="post" action="#">
@@ -36,10 +37,10 @@
 				</div>
 				<ul class="nav nav--vertical nav--vertical-primary section section-hr">
 					<li>
-						<a class="current" href="#">Home</a>
+						<a class="current" ui-sref="home">Home</a>
 					</li>
 					<li>
-						<a href="#">About me</a>
+						<a ui-sref="home">About me</a>
 					</li>
 				</ul>
 				<div class="section section-hr">
@@ -55,13 +56,13 @@
 			</div>
 			<div class="l-content">
 				<!-- List of posts -->
-				<div ng-view></div>
+				<div ui-view></div>
 
 			</div>
 		</div>
 		<script type="text/javascript">$("#toggleMenu").click(function () {
 			$(this).closest(".nav").toggleClass("nav-show");
-			everliveImages.init('fW5fEkhhplSXgaCS');
+			everliveImages.init('uYpwy6tnxBpJenHo');
 		});</script>
 		</script>
 	</body>

@@ -1,11 +1,12 @@
 (function() {
     var detailsApp = angular.module('blogApp.details', ['ngRoute', 'blogApp.services']);
 
-    detailsApp.controller('detailsController', function($scope, $stateParams, EverliveService) {        
+    detailsApp.controller('detailsController', function($window, $scope, $stateParams, EverliveService) {        
         EverliveService.getBlogPostByUrl($stateParams.url).then(
             function(result) {
                 $scope.post = result;
                 $scope.post.Comments = $scope.post.Comments || [];
+                $window.document.title = result.Title;
             },
             function() {}
         );

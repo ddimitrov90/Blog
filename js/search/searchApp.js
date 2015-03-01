@@ -1,21 +1,7 @@
 (function() {
     var searchApp = angular.module('blogApp.search', ['ngRoute', 'blogApp.services']);
-
-    searchApp.config(['$routeProvider',
-        function($routeProvider) {
-            $routeProvider.when('/search/:tag', {
-                templateUrl: 'js/search/searchView.html',
-                controller: 'searchController'
-            });
-            $routeProvider.when('/archive/:month', {
-                templateUrl: 'js/search/searchView.html',
-                controller: 'archiveController'
-            });
-        }
-    ]);
-
-    searchApp.controller('searchController', function($scope, $routeParams, EverliveService) {
-        var tag = $routeParams.tag;
+    searchApp.controller('searchController', function($scope, $stateParams, EverliveService) {
+        var tag = $stateParams.tag;
         EverliveService.getBlogPostByTag(tag).then(
             function(result) {
                 $scope.blogPosts = result;
@@ -24,8 +10,8 @@
         );
     });
 
-    searchApp.controller('archiveController', function($scope, $routeParams, EverliveService) {
-        var month = $routeParams.month;
+    searchApp.controller('archiveController', function($scope, $stateParams, EverliveService) {
+        var month = $stateParams.month;
         EverliveService.getBlogPostsByMonth(month).then(
             function(result) {
                 $scope.blogPosts = result;

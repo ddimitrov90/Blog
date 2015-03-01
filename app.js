@@ -22,6 +22,16 @@ config(['$stateProvider', '$urlRouterProvider','$locationProvider', function($st
       templateUrl: 'js/home/homeView.html',
       controller: 'homeController'
     })
+    .state('archive', {
+      url: "/archive/:month",
+      templateUrl: 'js/home/homeView.html',
+      controller: 'archiveController'
+    })
+    .state('search', {
+      url: "/search/:tag",
+      templateUrl: 'js/home/homeView.html',
+      controller: 'searchController'
+    })
     .state('details', {
       url: '/details/:url',
       templateUrl: "js/details/detailsView.html",

@@ -11,7 +11,9 @@ var app = angular.module('blogApp', [
   'blogApp.archive',
   'blogApp.tagCloud'
 ]).
-config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+config(['$stateProvider', '$urlRouterProvider','$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+  $locationProvider.hashPrefix('!');
+
   $urlRouterProvider.otherwise("home");
 
   $stateProvider

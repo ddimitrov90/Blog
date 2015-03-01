@@ -9,7 +9,8 @@ var app = angular.module('blogApp', [
   'blogApp.details',
   'blogApp.search',
   'blogApp.archive',
-  'blogApp.tagCloud'
+  'blogApp.tagCloud',
+  'blogApp.aboutme'
 ]).
 config(['$stateProvider', '$urlRouterProvider','$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.hashPrefix('!');
@@ -36,6 +37,11 @@ config(['$stateProvider', '$urlRouterProvider','$locationProvider', function($st
       url: '/details/:url',
       templateUrl: "js/details/detailsView.html",
       controller: 'detailsController'
+    })
+    .state('about', {
+      url: '/about-me',
+      templateUrl: 'js/aboutme/aboutMeView.html',
+      controller: 'aboutMeController'
     });
 
 }]);

@@ -10,26 +10,54 @@
 					<li><a href="#"><span class="icon fa-twitter"></span><span>12</span></a></li>
 				</ul> -->
 		</div>
-		<div class="content">
+		<div>
 			<h1>{{ post.Title}}</h1>
-			<p ng-bind-html="post.Content | sanitize"></p>
+			<div ng-bind-html="post.Content | sanitize" class="article-content"></div>
 		</div>
 		<ul class="post-tags inline-block post-tags--content margin-top-m">
 			<li ng-repeat="tag in post.Tags">
 				<a href='#/search/{{ tag }}'>{{ tag }}</a>
 			</li>
 		</ul>
-		<ul>
-			<li ng-repeat="comment in post.Comments track by $index">
-				{{ comment.Comment }} by {{ comment.Author }}
-			</li>	
-		</ul>
-		<div>
-			Author: <br />
-			<input type="text" ng-model="newCommentAuthor"/> <br />
-			Comment: <br />
-			<textarea ng-model="newCommentPost"/><br />
-			<input type="button" value="add comment" ng-click="addComment()" />
+
+		<h3>Comments:</h3>
+			<button type="button" ng-click="toggleComments()">
+				<span ng-show="expanded">Hide comments</span>
+				<span ng-show="!expanded">Show comments</span>
+			</button>
+		<div class="comments" ng-show="expanded">			
+
+			<ul class="comments-list">
+				<li ng-repeat="comment in post.Comments track by $index">
+					<strong>
+					   {{ comment.Author }}
+					</strong>
+					<p class="help-text">{{ comment.Date | date:"MM/dd/yyyy 'at' h:mma" }}</p>
+					<div>
+						{{ comment.Comment }} 
+					</div>
+				</li>	
+			</ul>
+
+			<div class="comments-form" >
+				<h3>Leave a comment:</h3>
+
+				<div  class="form-control form-control-s">
+					<label for="author">Name</label>
+					<input id="author" name="author" type="text" ng-model="newCommentAuthor"/>
+				</div>
+
+				<div class="form-control form-control-m">
+					<label for="comment">Comment</label>
+					<textarea id="comment" name="comment" ng-model="newCommentPost"/>
+				</div>
+
+				<div>
+					<button class="button" type="button" ng-click="addComment()"> Add comment</button>
+				</div>
+			</div>
+
 		</div>
+
 	</div>
 </div>

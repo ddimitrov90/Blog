@@ -412,19 +412,19 @@ button, .button {
 	text-decoration: underline;
 }
 a.tag1 {
-	font-size: 0.7em;
-}
-a.tag2 {
-	font-size: 0.8em;
-}
-a.tag3 {
 	font-size: 0.9em;
 }
+a.tag2 {
+	font-size: 1.1em;
+}
+a.tag3 {
+	font-size: 1.3em;
+}
 a.tag4 {
-	font-size: 1em;
+	font-size: 1.5em;
 }
 a.tag5 {
-	font-size: 1.1em;
+	font-size: 1.7em;
 }
 
 .post-tags--content li {

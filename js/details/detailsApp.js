@@ -26,7 +26,7 @@
         }
 
         $scope.toggleComments = function(){
-            $scope.expanded =  $scope.expanded === false ? true: false;
+            $scope.expanded =  !$scope.expanded ? true: false;
         }
     });    
 })();

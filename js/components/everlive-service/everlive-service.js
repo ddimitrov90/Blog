@@ -19,12 +19,12 @@
             return deferred.promise;
         };
 
-        this.getBlogPosts = function getBlogPosts(count) {
-            if (!count) {
-                count = 5;
+        this.getBlogPosts = function getBlogPosts(take, skip) {
+            if (!take) {
+                take = 5;
             }
             var query = new Everlive.Query();
-            query.orderDesc('Date').take(count);
+            query.orderDesc('Date').skip(skip).take(take);
 
             var deferred = $q.defer();
             blogPostData.get(query).then(function(data) { 

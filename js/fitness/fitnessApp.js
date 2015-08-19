@@ -1,14 +1,14 @@
 (function() {
-    var homeApp = angular.module('blogApp.home', ['ngRoute', 'infinite-scroll', 'blogApp.services']);
+    var homeApp = angular.module('blogApp.fitness', ['ngRoute', 'infinite-scroll', 'blogApp.services']);
 
-    homeApp.controller('homeController', function($window, $scope, EverliveService, MetaInformationService) {
+    homeApp.controller('fitnessController', function($window, $scope, EverliveService, MetaInformationService) {
         $scope.blogPosts = [];
         $scope.isLoading = false;
 
         $scope.loadBlogPosts = function() {
             if($scope.isLoading) return;
             $scope.isLoading = true;
-            EverliveService.getBlogPosts({ 'Tags' : { $nin : ['fitness'] }}, 5, $scope.blogPosts.length).then(
+            EverliveService.getBlogPostByTag('fitness', 5, $scope.blogPosts.length).then(
                 function(result) {
                     if(result.length == 0){
                         return;
@@ -16,8 +16,8 @@
                     for (var i = 0; i < result.length; i++) {
                         $scope.blogPosts.push(result[i]);
                     };
-                    $window.document.title = 'Mitko\'s blog';
-                    MetaInformationService.setMetaDescription('this is from home');
+                    $window.document.title = 'Mitko\'s fitness blog';
+                    MetaInformationService.setMetaDescription('Fitness diary');
                     $scope.isLoading = false;
                 },
                 function() {}

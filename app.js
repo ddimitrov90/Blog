@@ -6,6 +6,7 @@ var app = angular.module('blogApp', [
 	'ngRoute',
 	'ui.router',
 	'blogApp.home',
+	'blogApp.fitness',
 	'blogApp.details',
 	'blogApp.search',
 	'blogApp.archive',
@@ -22,6 +23,11 @@ config(['$stateProvider', '$urlRouterProvider','$locationProvider', function($st
 			url: "/home",
 			templateUrl: 'js/home/homeView.html',
 			controller: 'homeController'
+		})
+		.state('fitness', {
+			url: "/fitness",
+			templateUrl: 'js/fitness/fitnessView.html',
+			controller: 'fitnessController'
 		})
 		.state('archive', {
 			url: "/archive/:month",
@@ -88,18 +94,13 @@ app.run(['$rootScope','MetaInformationService', function($rootScope, MetaInforma
 			   element.className = "";
 			});
 
-			switch(next.controller) {
+			var controllerLinks = {
+				homeController : 'homeLink',
+				aboutMeController : 'aboutmeLink',
+				fitnessController: 'fitnessLink'
+			};
 
-				case "homeController":
-					document.getElementById('homeLink').className = "current";
-					break;
-
-				case "aboutMeController":
-					document.getElementById('aboutmeLink').className = "current";
-					break;
-
-				default:				
-			}
+			document.getElementById(controllerLinks[next.controller]).className = "current";
 		});
 			
 }]);

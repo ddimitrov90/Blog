@@ -65,6 +65,9 @@ app.service('MetaInformationService', function() {
 		setMetaDescription: function(newMetaDescription) {
 			metaDescription = newMetaDescription;
 		},
+		setMetaKeywords: function(newMetaKeywords) {
+			metaKeywords = newMetaKeywords;
+		},
 		appendMetaKeywords: function(newKeywords) {
 			for (var key in newKeywords) {
 				if (metaKeywords === '') {

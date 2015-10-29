@@ -1,63 +1,30 @@
 <div class="articles">
-	<div class="article">
-		<div class="article-tag">
-				<time><h4>{{ post.Date | date: 'MMM'}}</h4></time>
-				<time><h3>{{ post.Date | date: 'd'}}</h3></time>
-				<!-- <ul class="social-icons social-icons--vertical">
+    <div class="article">
+        <div class="article-tag">
+            <time>
+                <h4>{{ post.Date | date: 'MMM'}}</h4></time>
+            <time>
+                <h3>{{ post.Date | date: 'd'}}</h3></time>
+            <!-- <ul class="social-icons social-icons--vertical">
 					<li><a href="#"><span class="icon fa-facebook"></span><span>15</span></a></li>
 					<li><a href="#"><span class="icon fa-comment"></span></span><span>4</span></a></li>
 					<li><a href="#"><span class="icon fa-heart"></span><span>10</span></a></li>
 					<li><a href="#"><span class="icon fa-twitter"></span><span>12</span></a></li>
 				</ul> -->
-		</div>
-		<div>
-			<h1>{{ post.Title}}</h1>
-			<div ng-bind-html="post.Content | sanitize" class="article-content"></div>
-		</div>
-		<ul class="post-tags inline-block post-tags--content margin-top-m">
-			<li ng-repeat="tag in post.Tags">
-				<a href='#/search/{{ tag }}'>{{ tag }}</a>
-			</li>
-		</ul>
-
-		<h3 class="margin-top-m">Comments:</h3>
-			<button type="button" ng-click="toggleComments()">
-				<span ng-show="expanded">Hide comments</span>
-				<span ng-show="!expanded">Show comments</span>
-			</button>
-		<div class="comments" ng-show="expanded">			
-
-			<ul class="comments-list">
-				<li ng-repeat="comment in post.Comments track by $index">
-					<strong>
-					   {{ comment.Author }}
-					</strong>
-					<p class="help-text">{{ comment.Date | date:"MM/dd/yyyy 'at' h:mma" }}</p>
-					<div>
-						{{ comment.Comment }} 
-					</div>
-				</li>	
-			</ul>
-
-			<div class="comments-form" >
-				<h3>Leave a comment:</h3>
-
-				<div  class="form-control form-control-s">
-					<label for="author">Name</label>
-					<input id="author" name="author" type="text" ng-model="newCommentAuthor"/>
-				</div>
-
-				<div class="form-control form-control-m">
-					<label for="comment">Comment</label>
-					<textarea id="comment" name="comment" ng-model="newCommentPost"/>
-				</div>
-
-				<div>
-					<button class="button" type="button" ng-click="addComment()"> Add comment</button>
-				</div>
-			</div>
-
-		</div>
-
-	</div>
+        </div>
+        <div>
+            <h1>{{ post.Title}}</h1>
+            <div ng-bind-html="post.Content | sanitize" class="article-content"></div>
+        </div>
+        <ul class="post-tags inline-block post-tags--content margin-top-m">
+            <li ng-repeat="tag in post.Tags">
+                <a href='#/search/{{ tag }}'>{{ tag }}</a>
+            </li>
+        </ul>
+        <h3 class="margin-top-m">Comments:</h3>
+        <section>
+            <dir-disqus disqus-shortname="ddimitrov" disqus-identifier="{{ post.Id }}" disqus-url="{{ disqusUrl }}" ready-to-bind="{{ contentLoaded }}">
+            </dir-disqus>
+        </section>
+    </div>
 </div>

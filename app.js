@@ -11,9 +11,10 @@ var app = angular.module('blogApp', [
 	'blogApp.search',
 	'blogApp.archive',
 	'blogApp.tagCloud',
-	'blogApp.aboutme'
+	'blogApp.aboutme',
+  	'angular-google-analytics'
 ]).
-config(['$stateProvider', '$urlRouterProvider','$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+config(['$stateProvider', '$urlRouterProvider','$locationProvider','AnalyticsProvider', function($stateProvider, $urlRouterProvider, $locationProvider, AnalyticsProvider) {
 	$locationProvider.hashPrefix('!');
 
 	$urlRouterProvider.otherwise("home");
@@ -49,6 +50,11 @@ config(['$stateProvider', '$urlRouterProvider','$locationProvider', function($st
 			templateUrl: 'js/aboutme/aboutMeView.html',
 			controller: 'aboutMeController'
 		});
+
+    //AnalyticsProvider
+    //.setAccount('XXX')
+    //.setPageEvent('$stateChangeSuccess');
+
 
 }]);
 
@@ -86,7 +92,7 @@ app.filter("sanitize", ['$sce', function($sce) {
 	}
 }]);
 
-app.run(['$rootScope','MetaInformationService', function($rootScope, MetaInformationService){
+app.run(['$rootScope','MetaInformationService', 'Analytics', function($rootScope, MetaInformationService, Analytics){
 	 $rootScope.MetaInformation = MetaInformationService;
 	 $rootScope.$on('$stateChangeSuccess', function(event, next, current) {
 
@@ -102,8 +108,9 @@ app.run(['$rootScope','MetaInformationService', function($rootScope, MetaInforma
 				aboutMeController : 'aboutmeLink',
 				fitnessController: 'fitnessLink'
 			};
-
-			document.getElementById(controllerLinks[next.controller]).className = "current";
+			if(controllerLinks[next.controller]){
+				document.getElementById(controllerLinks[next.controller]).className = "current";				
+			}
 		});
 			
 }]);

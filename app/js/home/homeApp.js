@@ -1,10 +1,9 @@
 (function() {
     var homeApp = angular.module('blogApp.home', ['ngRoute', 'infinite-scroll', 'blogApp.services']);
 
-    homeApp.controller('homeController', function($window, $scope, EverliveService, MetaInformationService, $rootScope) {
+    homeApp.controller('homeController', [ "$window", "$scope", "EverliveService", "MetaInformationService" , function($window, $scope, EverliveService, MetaInformationService) {
         $scope.blogPosts = [];
         $scope.isLoading = false;
-        $rootScope.pageTitle = 'Dimitar\s Blog';
         $scope.loadBlogPosts = function() {
             if($scope.isLoading) return;
             $scope.isLoading = true;
@@ -21,5 +20,5 @@
                 function() {}
             );
         };
-    });
+    }]);
 })();

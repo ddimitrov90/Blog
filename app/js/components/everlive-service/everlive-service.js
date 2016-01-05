@@ -1,6 +1,6 @@
 (function() {
     var blogAppServices = angular.module('blogApp.services', []);
-    blogAppServices.service('EverliveService', function($q) {
+    blogAppServices.service('EverliveService',["$q",  function($q) {
         var self = this;
         var el = new Everlive({ 
             apiKey : 'la2ryjFXLtQcEEUP',
@@ -164,5 +164,5 @@
             return result;
 
         };
-    });
+    }]);
 })();

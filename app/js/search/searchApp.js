@@ -1,22 +1,22 @@
 (function() {
     var searchApp = angular.module('blogApp.search', ['ngRoute', 'blogApp.services']);
-    searchApp.controller('searchController', function($scope, $stateParams, EverliveService) {
-        var tag = $stateParams.tag;
+    searchApp.controller('searchController',["$scope", "$routeParams", "EverliveService", function($scope, $routeParams, EverliveService) {
+        var tag = $routeParams.tag;
         EverliveService.getBlogPostByTag(tag).then(
             function(result) {
                 $scope.blogPosts = result;
             },
             function() {}
         );
-    });
+    }]);
 
-    searchApp.controller('archiveController', function($scope, $stateParams, EverliveService) {
-        var month = $stateParams.month;
+    searchApp.controller('archiveController',["$scope", "$routeParams", "EverliveService", function($scope, $routeParams, EverliveService) {
+        var month = $routeParams.month;
         EverliveService.getBlogPostsByMonth(month).then(
             function(result) {
                 $scope.blogPosts = result;
             },
             function() {}
         );
-    });
+    }]);
 })();

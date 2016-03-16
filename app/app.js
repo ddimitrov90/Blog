@@ -12,12 +12,17 @@ var app = angular.module('blogApp', [
 	'blogApp.archive',
 	'blogApp.tagCloud',
 	'blogApp.aboutme',
-  	'angular-google-analytics'
+  	'angular-google-analytics',
+  	'hljs'
 ]).
-config(['$stateProvider', '$urlRouterProvider','$locationProvider','AnalyticsProvider', function($stateProvider, $urlRouterProvider, $locationProvider, AnalyticsProvider) {
+config(['$stateProvider', '$urlRouterProvider','$locationProvider','AnalyticsProvider', 'hljsServiceProvider', function($stateProvider, $urlRouterProvider, $locationProvider, AnalyticsProvider, hljsServiceProvider) {
 	$locationProvider.hashPrefix('!');
 
 	$urlRouterProvider.otherwise("home");
+
+	hljsServiceProvider.setOptions({
+    	languages: ["swift","Swift"]
+  	});
 
 	$stateProvider
 		.state('home', {

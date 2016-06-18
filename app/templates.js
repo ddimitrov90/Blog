@@ -11,7 +11,15 @@ angular.module('blogApp').run(['$templateCache', function($templateCache) {
     "\t<br /><br />\n" +
     "\tYou can find me on various social networks listed below.</p>\n" +
     "\t<br />\n" +
-    "\t\n" +
+    "\t<div hljs hljs-language=\"swift\">\n" +
+    "class SomeClass {\n" +
+    "\t \t\t\t   // class definition goes here\n" +
+    "\t\t   let a: Int = 5\n" +
+    "}\n" +
+    "struct SomeStructure {\n" +
+    "    // structure definition goes here\n" +
+    "}\n" +
+    "\t</div>\n" +
     "\t<div class=\"centered\">\n" +
     "\t<h3>Contact me:</h3>\n" +
     "\t<ul class=\"social-icons inline-block\">\n" +

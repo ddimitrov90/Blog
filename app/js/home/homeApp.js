@@ -7,7 +7,7 @@
         $scope.loadBlogPosts = function() {
             if($scope.isLoading) return;
             $scope.isLoading = true;
-            EverliveService.getBlogPosts({ 'Tags' : { $nin : ['fitness'] }}, 5, $scope.blogPosts.length).then(
+            EverliveService.getBlogPosts({ }, 5, $scope.blogPosts.length).then(
                 function(result) {
                     if(result.length == 0){
                         return;

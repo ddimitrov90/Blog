@@ -110,8 +110,7 @@ app.run(['$rootScope','MetaInformationService', 'Analytics', function($rootScope
 
 			var controllerLinks = {
 				homeController : 'homeLink',
-				aboutMeController : 'aboutmeLink',
-				fitnessController: 'fitnessLink'
+				aboutMeController : 'aboutmeLink'
 			};
 			if(controllerLinks[next.controller]){
 				document.getElementById(controllerLinks[next.controller]).className = "current";				

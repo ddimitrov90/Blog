@@ -16,6 +16,9 @@
                     $scope.disqusUrl = $window.location.href;  
                     EverliveService.resizeImages().then(function(result){                        
                     });
+                    $('pre code').each(function(i, block) {
+                        hljs.highlightBlock(block);
+                    });
                 }, 0);
 
             },

@@ -1,5 +1,5 @@
 (function() {
-    var homeApp = angular.module('blogApp.fitness', ['ngRoute', 'infinite-scroll', 'blogApp.services']);
+    var homeApp = angular.module('blogApp.fitness', ['ngRoute', 'blogApp.services']);
 
     homeApp.controller('fitnessController', function($window, $scope, EverliveService, MetaInformationService) {
         $scope.blogPosts = [];

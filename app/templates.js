@@ -11,15 +11,6 @@ angular.module('blogApp').run(['$templateCache', function($templateCache) {
     "\t<br /><br />\n" +
     "\tYou can find me on various social networks listed below.</p>\n" +
     "\t<br />\n" +
-    "\t<div hljs hljs-language=\"swift\">\n" +
-    "class SomeClass {\n" +
-    "\t \t\t\t   // class definition goes here\n" +
-    "\t\t   let a: Int = 5\n" +
-    "}\n" +
-    "struct SomeStructure {\n" +
-    "    // structure definition goes here\n" +
-    "}\n" +
-    "\t</div>\n" +
     "\t<div class=\"centered\">\n" +
     "\t<h3>Contact me:</h3>\n" +
     "\t<ul class=\"social-icons inline-block\">\n" +
@@ -89,7 +80,7 @@ angular.module('blogApp').run(['$templateCache', function($templateCache) {
     "        </ul>\n" +
     "        <h3 class=\"margin-top-m\">Comments:</h3>\n" +
     "        <section>\n" +
-    "            <dir-disqus disqus-shortname=\"ddimitrov\" disqus-identifier=\"{{ post.Id }}\" disqus-url=\"{{ disqusUrl }}\" ready-to-bind=\"{{ contentLoaded }}\">\n" +
+    "            <dir-disqus disqus-shortname=\"ddimitrovnet\" disqus-identifier=\"{{ post.Id }}\" disqus-url=\"{{ disqusUrl }}\" ready-to-bind=\"{{ contentLoaded }}\">\n" +
     "            </dir-disqus>\n" +
     "        </section>\n" +
     "    </div>\n" +
@@ -123,21 +114,13 @@ angular.module('blogApp').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('js/home/homeView.html',
-    "<div class=\"articles\" infinite-scroll='loadBlogPosts()' infinite-scroll-disabled='isLoading' infinite-scroll-distance='2'>\n" +
-    "\n" +
+    "<div class=\"articles\">\n" +
     "    <div class=\"article\" ng-repeat=\"bp in blogPosts\">\n" +
     "    \t<div class=\"article-tag\">\n" +
     "\t\t\t<h4> {{ bp.Date | date : \"MMM\" }}</h4>\n" +
     "\t\t\t<h3> {{ bp.Date | date : \"d\" }} </h3>\n" +
-    "<!-- \t\t\t\t\t<ul class=\"social-icons social-icons--vertical\">\n" +
-    "\t\t\t\t<li><a href=\"#\"><span class=\"icon fa-facebook\"></span><span>15</span></a></li>\n" +
-    "\t\t\t\t<li><a href=\"#\"><span class=\"icon fa-comment\"></span></span><span>4</span></a></li>\n" +
-    "\t\t\t\t<li><a href=\"#\"><span class=\"icon fa-heart\"></span><span>10</span></a></li>\n" +
-    "\t\t\t\t<li><a href=\"#\"><span class=\"icon fa-twitter\"></span><span>12</span></a></li>\n" +
-    "\t\t\t</ul> -->\n" +
     "\t\t</div>\n" +
     "        <h1><a ui-sref=\"details({url : bp.Url})\">{{bp.Title}}</a></h1>\n" +
-    "        <!-- <h3> A free fully responsive thing</h3> -->\n" +
     "        <div class=\"content\">\n" +
     "            <p>{{ bp.Summary }}</p>\n" +
     "        </div>\n" +

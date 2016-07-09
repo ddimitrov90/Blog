@@ -1,18 +1,10 @@
-<div class="articles" infinite-scroll='loadBlogPosts()' infinite-scroll-disabled='isLoading' infinite-scroll-distance='2'>
-
+<div class="articles">
     <div class="article" ng-repeat="bp in blogPosts">
     	<div class="article-tag">
 			<h4> {{ bp.Date | date : "MMM" }}</h4>
 			<h3> {{ bp.Date | date : "d" }} </h3>
-<!-- 					<ul class="social-icons social-icons--vertical">
-				<li><a href="#"><span class="icon fa-facebook"></span><span>15</span></a></li>
-				<li><a href="#"><span class="icon fa-comment"></span></span><span>4</span></a></li>
-				<li><a href="#"><span class="icon fa-heart"></span><span>10</span></a></li>
-				<li><a href="#"><span class="icon fa-twitter"></span><span>12</span></a></li>
-			</ul> -->
 		</div>
         <h1><a ui-sref="details({url : bp.Url})">{{bp.Title}}</a></h1>
-        <!-- <h3> A free fully responsive thing</h3> -->
         <div class="content">
             <p>{{ bp.Summary }}</p>
         </div>

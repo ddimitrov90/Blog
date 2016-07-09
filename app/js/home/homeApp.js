@@ -1,5 +1,5 @@
 (function() {
-    var homeApp = angular.module('blogApp.home', ['ngRoute', 'infinite-scroll', 'blogApp.services']);
+    var homeApp = angular.module('blogApp.home', ['ngRoute', 'blogApp.services']);
 
     homeApp.controller('homeController', [ "$window", "$scope", "EverliveService", "MetaInformationService","$rootScope" , function($window, $scope, EverliveService, MetaInformationService,$rootScope) {
         $scope.blogPosts = [];
@@ -8,7 +8,7 @@
         $scope.loadBlogPosts = function() {
             if($scope.isLoading) return;
             $scope.isLoading = true;
-            EverliveService.getBlogPosts({ }, 5, $scope.blogPosts.length).then(
+            EverliveService.getBlogPosts({ }, 100, 0).then(
                 function(result) {
                     if(result.length == 0){
                         return;
@@ -21,5 +21,6 @@
                 function() {}
             );
         };
+        $scope.loadBlogPosts();
     }]);
 })();

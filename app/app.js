@@ -56,9 +56,9 @@ config(['$stateProvider', '$urlRouterProvider','$locationProvider','AnalyticsPro
 			controller: 'aboutMeController'
 		});
 
-    //AnalyticsProvider
-    //.setAccount('XXX')
-    //.setPageEvent('$stateChangeSuccess');
+    AnalyticsProvider
+    .setAccount('UA-79546596-1')
+    .setPageEvent('$stateChangeSuccess');
 
 
 }]);

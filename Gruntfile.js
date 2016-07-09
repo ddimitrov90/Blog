@@ -1,10 +1,8 @@
 module.exports = function (grunt) {
  
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
- 
-        clean: ["dist", '.tmp'],
- 
+        pkg: grunt.file.readJSON('package.json'), 
+        clean: ["dist", '.tmp'], 
         copy: {
             main: {
                 expand: true,
@@ -12,16 +10,13 @@ module.exports = function (grunt) {
                 src: ['**', '!js/**', '!**/*.css'],
                 dest: 'dist/'
             }
-        },
- 
+        }, 
         useminPrepare: {
             html: 'app/index.html'
-        },
- 
+        }, 
         usemin: {
             html: ['dist/index.html']
         },
-
 		ngtemplates:  {
 		  	blogApp: {
 		  		cwd: 'app/',
@@ -29,13 +24,21 @@ module.exports = function (grunt) {
 		    	dest: 'app/templates.js'
 		  	}
 		},
- 
         uglify: {
             options: {
                 report: 'min',
                 mangle: false
             }
-        }
+        },
+		watch: {
+            options: {
+                spawn: false
+            },
+            js: {
+                files: ['app/**/*.js','app/**/*.html'],
+                tasks: ['default']
+            }
+        }
     });
  
     grunt.loadNpmTasks('grunt-contrib-clean');
@@ -45,9 +48,14 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-usemin');
+	grunt.loadNpmTasks('grunt-contrib-watch');
  
     // Tell Grunt what to do when we type "grunt" into the terminal
     grunt.registerTask('default', [
-        'clean', 'ngtemplates', 'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'usemin'
+         'ngtemplates', 'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'usemin'
+    ]);
+
+	grunt.registerTask('watching', [
+        'clean', 'default', 'watch:js'
     ]);
 };

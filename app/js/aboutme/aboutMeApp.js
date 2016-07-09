@@ -10,7 +10,7 @@
         }
     ]);
 
-    aboutMeApp.controller('aboutMeController',["$scope", "$routeParams", "EverliveService", function($scope, $routeParams, EverliveService) {
-        $scope.name = 'Jen Peleva';
+    aboutMeApp.controller('aboutMeController',["$scope", "$routeParams", "EverliveService","$rootScope" , function($scope, $routeParams, EverliveService, $rootScope) {
+        $rootScope.pageTitle = 'ddimitrov about me';
     }]);
 })();
